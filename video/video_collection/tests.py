@@ -144,7 +144,7 @@ class TestAddVideos(TestCase):
 
         self.assertEqual('yoga', video.name)
         self.assertEqual('https://www.youtube.com/watch?v=4vTJHUDB5ak', video.url)
-        self.assertEquals('', video.notes)
+        self.assertEqual('', video.notes)
         self.assertEqual('4vTJHUDB5ak', video.video_id)
 
 
@@ -332,7 +332,7 @@ class TestVideoList(TestCase):
         response = self.client.get(reverse('video_list'))
         videos_in_template = response.context['videos']
         self.assertContains(response, 'No videos.')
-        self.assertEquals(0, len(videos_in_template))
+        self.assertEqual(0, len(videos_in_template))
 
 
     # 1 video vs 4 videos message
